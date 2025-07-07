@@ -1,0 +1,12 @@
+
+credentials.json
+
+__pycache__/
+*.py[cod]
+
+.env/
+venv/
+env/
+
+.DS_Store
+.vscode/
