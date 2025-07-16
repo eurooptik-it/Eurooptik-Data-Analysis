@@ -55,3 +55,20 @@ GOOGLE_SHEETS = {
         }
     )
 }
+
+KNOWN_BRANDS = ['ANA HICKMANN', 'ARMANI EXCHANGE', 'ARNETTE', 'AVANGLION',
+                'BABY-HIPPO', 'BURBERRY','BVLGARI',
+                'CALVIN KLEIN', 'CELINE',
+                'DIOR', 'DOLCE&GABBANA',
+                'EMPORIO ARMANI', 'ENOX', 'ESCHENBACH',
+                'FIELMANN', 'FITCHE', 'FURLA',
+                'GANT', 'GIORGIO ARMANI', 'GUESS',
+                'HARLEY DAVIDSON', 'HELLO KITTY', 'HICKMANN',
+                'JIMMY CHOO',
+                'MICHAEL KORS', 'MISS SIXTY',
+                'OAKLEY',
+                'POLICE', 'PRADA', 
+                'RALPH LAUREN', 'RAY BAN',
+                'SFEROFLEX', 'SILHOUETTE', 'SWAROVSKI',
+                'VALENTINO', 'VERSACE', 'VOGUE'
+                ]
