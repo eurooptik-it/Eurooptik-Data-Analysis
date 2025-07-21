@@ -53,6 +53,12 @@ GOOGLE_SHEETS = {
             "Incasari_Februarie_2025" : "id",
             "Incasari_Ianuarie_2025" : "id"
         }
+    ),
+    "Clienti" : GoogleSheet(
+        id="1mY10dR51F4yTfUt5Ss5gcqLWdh6x6fi8bBO0XlEpNxk",  
+        pages={
+            "Clienti" : "1806100243"
+        }
     )
 }
 
