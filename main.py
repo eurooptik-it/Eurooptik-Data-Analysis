@@ -7,7 +7,7 @@ import time
 
 from scraper import scrape_smartbuy
 
-from utils import GOOGLE_SHEETS, KNOWN_BRANDS, GoogleSheet
+from src.utils import GOOGLE_SHEETS, KNOWN_BRANDS, GoogleSheet
 
 def get_sheet_url(sheet: GoogleSheet, page_name: str) -> str:
     gid = sheet.pages[page_name]
