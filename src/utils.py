@@ -46,12 +46,12 @@ GOOGLE_SHEETS = {
     "Raport_incasari" : GoogleSheet(
         id="1Cj6mNa6kaPOwckd-REVZsemOyCWKRPuMMIaVlwISxLc",
         pages={
-            "Incasari_Iunie_2025": "368568172",
-            "Incasari_Mai_2025" : "id",
-            "Incasari_Aprilie_2025" : "id",
-            "Incasari_Martie_2025" : "id",
-            "Incasari_Februarie_2025" : "id",
-            "Incasari_Ianuarie_2025" : "id"
+            "Incasari_Iunie_2025": "1455833454",
+            "Incasari_Mai_2025" : "1829298788",
+            "Incasari_Aprilie_2025" : "1936663589",
+            "Incasari_Martie_2025" : "1026830607",
+            "Incasari_Februarie_2025" : "881321237",
+            "Incasari_Ianuarie_2025" : "1302372194"
         }
     ),
     "Clienti" : GoogleSheet(
