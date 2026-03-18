@@ -3,10 +3,24 @@ credentials.json
 
 __pycache__/
 *.py[cod]
+*.pyo
 
 .env/
 venv/
 env/
+.venv/
+
+.ipynb_checkpoints/
 
 .DS_Store
 .vscode/
+
+# Generated local datasets and exports
+*.csv
+*.tsv
+*.xlsx
+*.xls
+
+# Generated reports
+*.html
+*.pdf

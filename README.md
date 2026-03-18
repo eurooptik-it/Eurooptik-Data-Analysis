@@ -1,59 +1,92 @@
-# Eurooptik Data Analysis Pipeline 📊
+# Eurooptik Data Analysis
 
-This repository contains the Python-based data analysis pipeline, web scrapers, and reporting tools used for Eurooptik. The project extracts raw data, processes patient/sales information, and generates visual reports using Jupyter Notebooks.
+Python scripts and Jupyter notebooks for collecting, processing, and analyzing Eurooptik operational data (sales, questionnaire, and patient-oriented analysis).
 
-## 🗂 Project Structure
+## What This Project Does
 
-The repository is organized as follows:
+- Extracts and normalizes data from Google Sheets and local inputs.
+- Processes order/sales records and patient datasets.
+- Generates analysis outputs and report-ready artifacts from notebooks.
 
-- **`main.py`**: The main entry point script (describe briefly what it triggers, e.g., the overall data pipeline).
-- **`scraper.py`**: Web scraping script used to extract external data (e.g., fetching brand info using `brands.txt`).
-- **`questionnaire.py`**: Script handling the processing of patient/client questionnaire data.
-- **`src/`**: Folder containing the core Jupyter Notebooks and utilities for deep data analysis:
-  - `pacients_analysis.ipynb`: Generates demographic and visual analysis of patients.
-  - `procesare_bon_comanda.ipynb`: Processes and formats order receipts/sales data.
-  - `utils.py`: Helper functions used across the notebooks and scripts.
-- **`brands.txt`**: Text file containing the list of brands used by the scraper.
-- **`requirements.txt`**: List of Python dependencies required to run the project.
+## Repository Structure
 
-*(Note: Raw data files like CSVs or PDFs are excluded from this repository via `.gitignore` for data privacy reasons. They are generated locally when the scripts are run).*
+- `main.py` - Entry point for running project logic from scripts.
+- `scraper.py` - Data extraction and scraping workflow.
+- `questionnaire.py` - Questionnaire-related processing.
+- `brands.txt` - Brand dictionary used by data processing/scraping logic.
+- `requirements.txt` - Python dependencies.
+- `src/utils.py` - Shared constants and helper utilities.
+- `src/pacients_analysis.ipynb` - Patient analysis notebook.
+- `src/procesare_bon_comanda.ipynb` - Sales/order processing notebook.
 
-## Getting Started
+## Requirements
 
-To run this project locally, please refer to the **"Project Setup"** Issue in the GitHub Issues tab, or follow these basic steps:
+- Python 3.10+ recommended.
+- A Google service account credentials file named `credentials.json` in the repository root.
 
-1. Ensure **Python (3.8+)** is installed and added to your system PATH.
-2. Ensure you have the `credentials.json` file placed in the root directory (needed for Google Sheets API access).
-3. Create and activate a virtual environment:
-   
+## Setup
+
+1. Create a virtual environment.
+
 ```bash
- python -m venv venv
-   venv\Scripts\activate 
-``` 
-4. Install the required libraries:
+python -m venv .venv
+```
+
+2. Activate it.
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+3. Install dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-How to Use
-Running the Python Scripts
-You can run the standalone scripts directly from the terminal. For example, to run the web scraper:
+## Usage
 
-```Bash
+Run script-based workflows:
+
+```bash
+python main.py
 python scraper.py
+python questionnaire.py
 ```
-Running the Jupyter Notebooks
-To view and generate the visual reports:
 
-Open Visual Studio Code.
+Run notebook workflows:
 
-Make sure the Jupyter and Python extensions are installed.
+1. Open the notebook from `src/` in VS Code or Jupyter Lab.
+2. Select the project virtual environment kernel.
+3. Execute cells in order (or run all).
 
-Navigate to the src/ folder and open the desired notebook (e.g., pacients_analysis.ipynb).
+## Generated Files Policy
 
-Click "Run All" at the top of the notebook to execute the cells and generate the latest graphs and HTML/PDF reports.
+Generated datasets and report exports are intentionally ignored and should stay local, including:
 
-🔐 Credentials & Security
-This project interacts with Google Cloud APIs (Google Sheets/Drive). It requires a valid credentials.json Service Account key.
-Never commit the credentials.json or raw patient data (.csv files) to this repository.
+- CSV exports
+- Excel exports
+- Notebook-rendered HTML/PDF reports
+
+This keeps the repository clean and avoids pushing sensitive or large generated artifacts.
+
+## Security Notes
+
+- Do not commit `credentials.json`.
+- Do not commit patient-identifiable raw or processed datasets.
+- Share sanitized samples only when needed for debugging.
+
+## Recommended Workflow
+
+1. Pull latest changes and activate your local virtual environment.
+2. Run script or notebook workflows to regenerate local outputs.
+3. Review generated artifacts locally in `src/results/` and exported data files.
+4. Before commit, verify only source code and documentation changes are staged.
+5. Keep generated datasets/reports local (they are ignored by `.gitignore`).
+
+## Troubleshooting
+
+- If authentication fails, verify `credentials.json` exists in the project root and has access to the target Google Sheets.
+- If imports fail, ensure the active interpreter is the same environment where `requirements.txt` was installed.
