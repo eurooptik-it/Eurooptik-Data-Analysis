@@ -2,7 +2,8 @@
 import gspread
 import pandas as pd
 from gspread_dataframe import get_as_dataframe
-from oauth2client.service_account import ServiceAccountCredentials
+# from oauth2client.service_account import ServiceAccountCredentials --old code
+from google.oauth2.service_account import Credentials #new code
 import time
 
 from scraper import scrape_smartbuy
@@ -15,9 +16,15 @@ def get_sheet_url(sheet: GoogleSheet, page_name: str) -> str:
 
 def authenticate():
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+    creds = Credentials.from_service_account_file("credentials.json", scopes=scope)
     client = gspread.authorize(creds)
     return client
+
+# def authenticate():
+#     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+#     creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+#     client = gspread.authorize(creds)
+#     return client
 
 def get_data_from_google_sheet(sheet_name: str, page_name: str, client):
     sheet_meta = GOOGLE_SHEETS[sheet_name]
